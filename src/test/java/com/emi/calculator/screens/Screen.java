@@ -3,7 +3,6 @@ package com.emi.calculator.screens;
 import com.emi.calculator.common.General;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -25,7 +24,7 @@ public abstract class Screen {
 
 
    // public  abstract  String getPageTitle ();
-    public abstract WebElement getElement(By locator);
+    public abstract WebElement getWebElement(By locator);
     public abstract List<WebElement> getWebElements(By locator);
     public abstract void waitForElement (By locator);
 

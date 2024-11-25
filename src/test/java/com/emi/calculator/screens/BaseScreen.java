@@ -14,7 +14,7 @@ public class BaseScreen extends Screen {
     }
 
 
-    public WebElement getElement(By locator) {
+    public WebElement getWebElement(By locator) {
 
         WebElement element = null;
         try {
