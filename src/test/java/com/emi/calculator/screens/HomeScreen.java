@@ -3,39 +3,41 @@ package com.emi.calculator.screens;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 
-public class HomeScreen extends  BaseScreen{
+public class HomeScreen extends BaseScreen {
 
 
-
+    private By StartBtn = By.id("btnStart");
 
     public HomeScreen(AndroidDriver driver) {
         super(driver);
     }
 
-    public String getAppName()
-    {
-        return getWebElement(By.id("appName")).getText().trim();
+    public String getAppName() {
+
+        By name = By.id("appName");
+        waitForElement(name);
+        return getWebElement(name).getText().trim();
     }
 
-    public EmiCalculatorScreen tapStartButton()
-    {
-         getWebElement(By.id("btnStart")).click();
-         return getInstance(EmiCalculatorScreen.class);
+    public EmiCalculatorScreen tapStartButton() {
+        getWebElement(StartBtn).click();
+        return getInstance(EmiCalculatorScreen.class);
     }
 
-    public void tapCompareButton()
-    {
+    public void tapCompareButton() {
         getWebElement(By.id("btnCompare")).click();
     }
 
-    public String getStartButtonText()
-    {
-        return getWebElement(By.id(""))
+    public boolean hasStartButton() {
+        return getWebElements(StartBtn).size() > 0;
     }
 
-
-    public boolean hasStartButton()
-    {
-        return getWebElements(By.id("btnStart")).size()>0;
+    public String getStartButtonText() {
+        return getWebElement(StartBtn).getText().trim();
     }
+
+    public boolean hasCompareButton() {
+        return getWebElements(By.id("btnCompare")).size() > 0;
+    }
+
 }
