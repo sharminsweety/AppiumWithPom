@@ -12,7 +12,7 @@ public class EmiCalculatorScreen extends BaseScreen {
         getWebElement(By.id("etLoanAmount")).sendKeys(String.valueOf(amount));
         return this;
     }
-    public EmiCalculatorScreen fillInterestRate(int Rate) {
+    public EmiCalculatorScreen fillInterestRate(double Rate) {
         getWebElement(By.id("")).sendKeys(String.valueOf(Rate));
         return this;
     }
@@ -49,9 +49,14 @@ public class EmiCalculatorScreen extends BaseScreen {
         return getWebElements(By.id("layoutTable")).size()>0;
     }
 
-    public EmiCalculatorDetailScreen tabDetailBtn(){
-        getWebElement(By.id("")).click();
+    public EmiCalculatorDetailScreen tapDetailBtn(){
+        getWebElement(By.id("btnCalculate")).click();
         return getInstance(EmiCalculatorDetailScreen.class);
+    }
+
+    public boolean hasDetailBtn ()
+    {
+        return getWebElements(By.id("btnCalculate")).size()>0;
     }
 
 }
