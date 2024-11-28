@@ -9,6 +9,7 @@ public class EmiCalculatorScreen extends BaseScreen {
     }
 
     public EmiCalculatorScreen fillAmount(int amount) {
+        waitForElement(By.id("etLoanAmount"));
         getWebElement(By.id("etLoanAmount")).sendKeys(String.valueOf(amount));
         return this;
     }

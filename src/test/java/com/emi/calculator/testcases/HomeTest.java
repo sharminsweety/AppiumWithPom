@@ -34,5 +34,4 @@ public class HomeTest extends BaseTest {
         Assert.assertTrue(homeScreen.hasCompareButton());
     }
 
-
 }
