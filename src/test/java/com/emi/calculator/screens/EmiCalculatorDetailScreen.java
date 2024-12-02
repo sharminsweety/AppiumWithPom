@@ -18,6 +18,7 @@ public class EmiCalculatorDetailScreen extends BaseScreen{
     public EmiCalculatorScreen tapBackBtn() {
 
         waitForElement(By.id("actionMenuBack"));
+        waitForElement(By.id("btnDetail"));
         return getInstance(EmiCalculatorScreen.class);
     }
 
